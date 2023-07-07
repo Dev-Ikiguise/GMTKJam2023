@@ -35,13 +35,19 @@ public class EnemyAI : MonoBehaviour
         if (distance < proximityFromPlayer)
         {
             Debug.Log("player is too close.");
+            moveAwayFromPlayer();
         }
     }
 
+    void runAway()
+    {
+        rb.AddForce(transform.up * enemyMoveSpeed);
+    }
     void moveAwayFromPlayer()
     {
         Vector2 directionToFace = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
         transform.up = directionToFace;
+        runAway();
     }
 
 
