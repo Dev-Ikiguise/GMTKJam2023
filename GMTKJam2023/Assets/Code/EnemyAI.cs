@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     public float enemyMoveSpeed;
     public float proximityFromPlayer;
+    public float decelerationRate;
 
     private void Awake()
     {
@@ -52,7 +53,7 @@ public class EnemyAI : MonoBehaviour
 
     void stopRunningAway()
     {
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, decelerationRate * Time.deltaTime);
     }
     void moveAwayFromPlayer()
     {
