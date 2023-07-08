@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    Rigidbody2D rb;
-
     public Transform player;
     public Transform enemy;
-
-    //Has to do with movement stuff
+    Rigidbody2D rb;
     public float enemyMoveSpeed;
-    public float proximityFromPlayer;
-
-    //enemy health and death
     public float enemyHealth;
+    public float proximityFromPlayer;
 
     private void Awake()
     {
@@ -30,10 +25,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Calculate the distance between player and enemy
         float distance = Vector3.Distance(player.position, enemy.position);
+
+        // Use the distance for further actions or logic
+        Debug.Log("Distance to player: " + distance);
 
         if (distance <= proximityFromPlayer)
         {
+            Debug.Log("player is too close.");
             moveAwayFromPlayer();
         }
 
