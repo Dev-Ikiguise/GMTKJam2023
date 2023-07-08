@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     public float proximityFromPlayer;
     public float decelerationRate;
 
+    //private Vector2 directionToFace;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("player is too close.");
             moveAwayFromPlayer();
+
         }
 
         else
@@ -54,9 +57,10 @@ public class EnemyAI : MonoBehaviour
     }
     void moveAwayFromPlayer()
     {
-        Vector2 directionToFace = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        transform.up = directionToFace;
-        runAway();
+        transform.position = Vector2.MoveTowards(this.transform.position, player.position, enemyMoveSpeed * -Time.deltaTime);
+        //Vector2 directionToFace = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
+        //transform.up = directionToFace;
+        //runAway();
     }
 
 

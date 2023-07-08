@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EndGoal : MonoBehaviour
 {
-    public int damage;
-    public EnemyHealth enemyHealth;
+    //public int damage;
+   // public EnemyHealth enemyHealth;
     // Start is called before the first frame update
     void Start()
     {
