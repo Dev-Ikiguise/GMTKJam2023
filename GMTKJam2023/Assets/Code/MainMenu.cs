@@ -34,5 +34,6 @@ public class MainMenu : MonoBehaviour
     void HandleCreditsClosePressed()
     {
         creditsMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
 }
