@@ -9,7 +9,6 @@ public class EnemyAI : MonoBehaviour
     Rigidbody2D rb;
     public float enemyMoveSpeed;
     public float enemyHealth;
-    public float maxEnemyHealth;
     public float proximityFromPlayer;
 
     private void Awake()
@@ -32,16 +31,26 @@ public class EnemyAI : MonoBehaviour
         // Use the distance for further actions or logic
         Debug.Log("Distance to player: " + distance);
 
-        if (distance < proximityFromPlayer)
+        if (distance <= proximityFromPlayer)
         {
             Debug.Log("player is too close.");
             moveAwayFromPlayer();
+        }
+
+        else
+        {
+            stopRunningAway();
         }
     }
 
     void runAway()
     {
         rb.AddForce(transform.up * enemyMoveSpeed);
+    }
+
+    void stopRunningAway()
+    {
+        rb.velocity = Vector2.zero;
     }
     void moveAwayFromPlayer()
     {
