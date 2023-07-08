@@ -24,7 +24,7 @@ public class EndGoal : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("GOAT IN");
-           // enemyHealth.takeDamage(damage);
+            //enemyHealth.takeDamage(damage);
             //Debug.Log("Damage taken" + enemyHealth);
         }
     }
