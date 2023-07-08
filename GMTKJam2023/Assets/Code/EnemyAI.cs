@@ -63,5 +63,9 @@ public class EnemyAI : MonoBehaviour
         //runAway();
     }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, proximityFromPlayer);
+    }
 }
