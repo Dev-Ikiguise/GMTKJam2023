@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public Button creditsCloseButton;
 
     public GameObject creditsMenu;
+    public GameObject mainMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class MainMenu : MonoBehaviour
     void HandleCreditsPressed()
     {
         creditsMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     void HandleCreditsClosePressed()
