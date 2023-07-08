@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
 
     void HandleStartPressed()
     {
+        Debug.Log("next scene here I go.");
         SceneTransition.Instance.TransitionToScene(1);
     }
 
