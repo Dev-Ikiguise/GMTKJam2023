@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
         enemyCurrentHealth -= damage;
         if (enemyCurrentHealth <= 0)
         {
+            Debug.Log("OOF");
             Destroy(gameObject);
         }
     }
