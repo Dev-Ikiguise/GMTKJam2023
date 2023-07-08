@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    Rigidbody2D rb;
+
     public Transform player;
     public Transform enemy;
-    Rigidbody2D rb;
+
+
     public float enemyMoveSpeed;
-    public float enemyHealth;
     public float proximityFromPlayer;
 
     private void Awake()
