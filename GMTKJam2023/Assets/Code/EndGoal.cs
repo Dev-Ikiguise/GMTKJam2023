@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndGoal : MonoBehaviour
 {
+    public int damage;
     public EnemyHealth enemyHealth;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class EndGoal : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("GOAT IN");
+           // enemyHealth.takeDamage(damage);
+            //Debug.Log("Damage taken" + enemyHealth);
         }
     }
 }
