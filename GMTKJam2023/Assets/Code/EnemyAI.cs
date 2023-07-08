@@ -31,9 +31,6 @@ public class EnemyAI : MonoBehaviour
         // Calculate the distance between player and enemy
         float distance = Vector3.Distance(player.position, enemy.position);
 
-        // Use the distance for further actions or logic
-        Debug.Log("Distance to player: " + distance);
-
         if (distance <= proximityFromPlayer)
         {
             Debug.Log("player is too close.");
