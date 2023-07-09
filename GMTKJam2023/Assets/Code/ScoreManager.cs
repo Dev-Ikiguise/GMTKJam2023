@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    int score = 0;
+    public TextMeshProUGUI scoreText;
 
-    //public Text scoreText;
+    public int score;
 
     // Start is called before the first frame update
     public void Awake()
@@ -17,11 +18,16 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+    public void Start()
     {
-        //scoreText.text = score.ToString();
         Debug.Log("current score: " + score);
     }
+
+    public void Update()
+    {
+        scoreText.text = "FARMER IN: " + score.ToString();
+    }
+
 
     public void addPoint()
     {
