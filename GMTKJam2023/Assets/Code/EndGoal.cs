@@ -22,6 +22,8 @@ public class EndGoal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Finish")
         {
+            ScoreManager.instance.addPoint();
+
             Destroy(gameObject);
             Debug.Log("GOAT IN");
             //enemyHealth.takeDamage(damage);

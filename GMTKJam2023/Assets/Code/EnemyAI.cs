@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Start is called before the first frame update
