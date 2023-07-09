@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 5a56aa4284591164385fc300ff45f224
   - enabled: 1
-    path: Assets/Scenes/PlayerMovement.unity
-    guid: 780748ba89855734ea90fbf2b5bc54b1
+    path: Assets/Scenes/GameLevel.unity
+    guid: 3bdb47f160588334089780bbcb0d0916
   m_configObjects: {}
