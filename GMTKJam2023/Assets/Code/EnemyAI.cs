@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     public float enemyMoveSpeed;
     public float proximityFromPlayer;
+    public float doubleDashFromPlayer;
     public float decelerationRate;
 
     //private Vector2 directionToFace;
@@ -37,9 +38,13 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("player is too close.");
             moveAwayFromPlayer();
+            if (distance <= doubleDashFromPlayer)
+            {
+                Debug.Log("double dashing");
+                moveAwayFromPlayer();
+            }
 
         }
-
         else
         {
             stopRunningAway();
@@ -53,13 +58,13 @@ public class EnemyAI : MonoBehaviour
 
     void stopRunningAway()
     {
-        rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, decelerationRate * Time.deltaTime);
+        //transform.position = Vector2.Lerp(transform.position, Vector2.zero, decelerationRate * Time.deltaTime);
     }
     void moveAwayFromPlayer()
     {
         transform.position = Vector2.MoveTowards(this.transform.position, player.position, enemyMoveSpeed * -Time.deltaTime);
         //Vector2 directionToFace = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        //transform.up = directionToFace;
+       // transform.up = directionToFace;
         //runAway();
     }
 
@@ -67,5 +72,7 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, proximityFromPlayer);
+        Gizmos.DrawWireSphere(transform.position, doubleDashFromPlayer);
+
     }
 }

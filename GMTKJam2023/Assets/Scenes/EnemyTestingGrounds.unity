@@ -691,7 +691,8 @@ MonoBehaviour:
   player: {fileID: 1732652860}
   enemy: {fileID: 1784951273}
   enemyMoveSpeed: 1
-  proximityFromPlayer: 1.91
+  proximityFromPlayer: 5
+  doubleDashFromPlayer: 2
   decelerationRate: 1.25
 --- !u!50 &1784951277
 Rigidbody2D:
